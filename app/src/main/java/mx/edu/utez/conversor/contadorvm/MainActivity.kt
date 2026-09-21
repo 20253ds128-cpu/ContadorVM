@@ -11,7 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.contador.ui.screens.ContadorScreen
 import mx.edu.utez.conversor.contadorvm.ui.theme.ContadorVMTheme
+import mx.edu.utez.conversor.contadorvm.ui.viewmodel.ContadorViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,12 +22,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ContadorVMTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+
+                val viewModel : ContadorViewModel = viewModel()
+                ContadorScreen(viewModel)
+
             }
         }
     }
