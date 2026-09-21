@@ -13,6 +13,7 @@
 /captures
 .externalNativeBuild
 .cxx
+.idea
 
 # Archivos de firma y llaves (¡NUNCA los subas!)
 *.jks
